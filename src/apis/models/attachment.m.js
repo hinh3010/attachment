@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 import plugin from './plugins/index.plugin';
-
+import conn from '../../connect/connect_mongodb'
 const attachmentSchema = new Schema({
     originalname: {
         type: String,
@@ -72,6 +72,7 @@ attachmentSchema.plugin(plugin.jsonPlugin);
 
 
 
-const AttachmentModel = mongoose.model('Attachment', attachmentSchema)
+// const AttachmentModel = mongoose.model('Attachment', attachmentSchema)
+const AttachmentModel = conn.connAttachment.model('Attachment', attachmentSchema)
 
 export default AttachmentModel;

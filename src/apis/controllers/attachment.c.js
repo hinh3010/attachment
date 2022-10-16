@@ -4,10 +4,12 @@ import catchAsync from '../utils/catch-async';
 
 
 const createAttachment = catchAsync(async (req, res) => {
+    const { userId } = req.payload
     if (!req.file)
         throw createError.BadRequest();
     const file = new AttachmentModel({
         ...req.file,
+        createdById: userId
     });
     const newFile = await file.save();
     return res.json({

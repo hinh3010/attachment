@@ -5,6 +5,8 @@
 //   "pdf", "png", "ppm", "raw", "svg", "tiff", "tif"
 // ]
 
+import constType from "./const.type"
+
 // export const SHARP_AUDIO_TYPE = [
 //   "wav", "bwf", "aiff", "flac", "m4a", "pac",
 //   "tta", "wv", "ast", "aac", "mp2", "mp3", "amr",
@@ -159,3 +161,21 @@ export const ALL_FILE_TYPES = {
 
 export const allTypes = typeof ALL_FILE_TYPES;
 
+
+export const ACCOUNT_TYPE = [
+  constType.MENTOR,
+  constType.STUDENT,
+  // constType.ADMIN,
+  // constType.SUPER_ADMIN
+]
+
+export const AUTH_TYPE = [
+  constType.LOCAL,
+  constType.FACEBOOK,
+  constType.GOOGLE
+]
+
+export const ACCOUNT_STATUS = [
+  constType.ACTIVE,
+  constType.INACTIVE
+]
