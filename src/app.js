@@ -15,7 +15,7 @@ appLoader(app)
 
 
 app.use('/v1', routeV1)
-app.use('/apis', jwtMdw.verifyAccessToken, catchAsync(async (req, res) => {
+app.use('/', jwtMdw.verifyAccessToken, catchAsync(async (req, res) => {
 
     const query = { ...req.query, isSuperAdmin: false }
     const filters = pick(query, ['accountType', 'accountStatus', 'isAdmin']);
